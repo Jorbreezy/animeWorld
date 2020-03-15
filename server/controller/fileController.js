@@ -22,6 +22,31 @@ fileController.getAnime = (req, res, next) => {
     });
 }
 
+fileController.infoForAnime = (req, res, next) => {
+    const text = 'SELECT * FROM anime WHERE _id=$1';
+
+    const { id } = req.params;
+
+    db.query(text, [id], (error, data) => {
+        if(error) throw error;
+
+        res.locals.info = data.rows[0];
+        next();
+    })
+}
+
+fileController.infoForManga = (req, res, next) => {
+    const text = 'SELECT * FROM manga WHERE _id=$1';
+
+    const { id } = req.params;
+
+    db.query(text, [id], (error, data) => {
+        if(error) throw error;
+
+        res.locals.info = data.rows[0];
+        next();
+    })
+}
 
 module.exports = fileController;
 

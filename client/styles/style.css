@@ -35,6 +35,7 @@ body {
     margin-right: 16px;
     font-size: 17px;
     border-radius: 4px;
+    outline: none;
 }
 
 .choice {
@@ -53,7 +54,7 @@ body {
 }
 
 .choice:hover {
-    color: #404040 !important;
+    color: #5f85db !important;
     font-weight: 700 !important;
     letter-spacing: 3px;
     background: none;
